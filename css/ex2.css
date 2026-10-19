@@ -12,6 +12,12 @@ section {
   scroll-margin-top: 100px; /* 數值可依據 header 的高度微調 */
 }
 
+#top {
+    /* 依據 MOON 上方留白的大小給予數值，例如 60px ~ 100px */
+    scroll-margin-top: 80px; 
+}
+
+
 body{
     padding: 0;
     margin: 0;
@@ -158,21 +164,32 @@ section h1{
 .card:hover h2,
 .card:hover h3,
 .card:hover p {
-  color: rgba(255, 213, 0, 0.53); /* 填入你想換的顏色，如白色 #ffffff 或淡粉色 */
+  color: rgba(255, 213, 0, 0.7); /* 填入你想換的顏色，如白色 #ffffff 或淡粉色 */
 }
 
 .card img{
-	width:80%;
-	border-radius:50%;
-	border:solid 1px rgba(69, 9, 32, .2);
+	/* 1. 設定固定的寬與高（數值可依視覺效果調整，例如 140px ~ 180px） */
+    width: 225px;
+    height: 225px;
 
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari */
-    transform: rotate(0deg); /* Standard syntax */
-	
-	transition: transform 1.5s;
-	-webkit-transition: transform 1.5s;
+    /* 2. 關鍵：不管原圖長寬比為何，自動裁切置中填滿，不變形 */
+    object-fit: cover;
 
+    /* 3. 在長寬相同的情況下，50% 會變成完美的正圓形 */
+    border-radius: 50%;
+    border: solid 1px rgba(69, 9, 32, .2);
+
+    /* 讓圖片在卡片中水平置中 */
+    display: block;
+    margin: 0 auto;
+
+    /* 原本的旋轉與動畫設定 */
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    transition: transform 1.5s;
+    -webkit-transition: transform 1.5s;
 }
 
 .card:hover img{
@@ -269,5 +286,18 @@ footer{
 
     color:rgba(255, 213, 0, 1);
 }
+
+footer a {
+    color: rgba(255, 213, 0, 1);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+footer a:hover {
+    color: rgba(255, 213, 0, 1);
+    opacity: 0.7; /* 碰過去稍微半透明，維持黃色 */
+}
+
+
 
 
