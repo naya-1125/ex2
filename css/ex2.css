@@ -144,8 +144,8 @@ section{
     clear: both;
     width: 80%;
     margin: auto;
-    margin-top: 40px;    /* 往上推開與上方圖片的距離 */
-    margin-bottom: 40px; /* 往下推開與下方成員卡片的距離 */
+    margin-top: 50px;    /* 往上推開與上方圖片的距離 */
+    margin-bottom: 50px; /* 往下推開與下方成員卡片的距離 */
 }
 
 section h1{
