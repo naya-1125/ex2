@@ -111,6 +111,7 @@ nav a:hover{
 
 .hero img{
     width: 100%;
+    height: 100%;
     object-fit:cover;
 }
 
@@ -302,3 +303,32 @@ footer a:hover {
 
 
 
+/* 手機版樣式調整 */
+@media (max-width: 768px) {
+    /* 1. 將手機版的 hero 高度縮小（例如 300px~360px，依圖片比例調整） */
+    .hero {
+        height: 320px;
+    }
+
+    /* 2. 讓圖片完整填滿該高度，多餘部分自動裁切 */
+    .hero img {
+        height: 100%;
+    }
+
+    /* 3. 縮小手機版的大標題，避免 150px 爆版 */
+    .hero h1 {
+        font-size: 48px;
+        top: 20%;
+    }
+
+    /* 4. 縮小副標題並調整位置 */
+    .hero p {
+        font-size: 14px;
+        top: 45%;
+    }
+
+    /* 5. 縮減 GIRLS 與上方的間距 */
+    section {
+        margin-top: 20px;
+    }
+}
